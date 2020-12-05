@@ -1,2 +1,2 @@
-# BinarySearch
-Searching an element using Binary search
+# Leetcode problem
+### problem solving day to day from leetcode
