@@ -61,25 +61,36 @@ import java.io.*;
 //recursive approach*****************
 class BinarySearch{
     public int binarySearch( int[]a ,int l, int h, int k){
-        int mid = 0;
-        int index =0;
-        //base condtion for recursive function
-        if( l > h)
-            return -1;
-                
-        mid = l +( h -l)/2;
-            
-        if( a[mid] < k)
-            index= binarySearch(a, mid+1,h,k);
-        else//a[mid]>k
-            index =  binarySearch(a,l, mid,k);
+        // int index = 0;
+        // if( l < h){
+        //     int mid = l +( h -l)/2;
+        //     if( a[mid] < k)
+        //         index = binarySearch(a, mid + 1, h, k);
+        //     else//a[mid]>=k beacause may be mid is middle 
+        //         index  = binarySearch(a, l, mid, k);;
+        // } else {
+        //     index = l;
+        // }
+        
+        // if(index != -1 && a[index] == k)
+        //     return index;
+        // return -1;
 
-        if( a[index] == k){
-            return index;
-        }
-        else{
+
+        if(l > h) {
             return -1;
         }
+
+        if(l == h) {
+            return a[l] == k ? l: -1;
+        }
+
+        int mid = l + (h - l) / 2;
+        if(a[mid] < k) {
+            return binarySearch(a, mid + 1, h, k);
+        } 
+
+        return binarySearch(a, l, mid, k);
 
     }
     public static void assertion(Object result, Object output) {
@@ -105,7 +116,18 @@ class BinarySearch{
         //assertion (3, obj.binarySearch(new int[] {10,20,30,40,50,60}, 0,5,val));
         assertion (0, obj.binarySearch(new int[] {0,0,0,0,0},0,4, val));
         
+    
+    public static void main( String[] args){
 
+        int a = 10;
+        boolean flag = true;
+        if(a % 2 == 0) {
+            System.out.print("even");
+            return;
+        }
+        
+        System.out.print("odd");
+        
     }
 }
 
