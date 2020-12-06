@@ -1,7 +1,7 @@
 import java.util.*;
 import java.lang.*;
 import java.io.*;
-//iterative approach
+//iterative approach************************************
 /*class BinarySearch{
     public int binarySearch( int[]a , int k){
         int  l = 0, mid=0 ;
@@ -58,6 +58,8 @@ import java.io.*;
 
     }
 }*/
+
+
 //recursive approach*****************
 class BinarySearch{
     public int binarySearch( int[]a ,int l, int h, int k){
@@ -76,12 +78,12 @@ class BinarySearch{
         //     return index;
         // return -1;
 
-
-        if(l > h) {
+//recursive approach but in advance form
+        if(l > h) {//base condition
             return -1;
         }
 
-        if(l == h) {
+        if(l == h) {//base condition
             return a[l] == k ? l: -1;
         }
 
@@ -95,7 +97,7 @@ class BinarySearch{
     }
     public static void assertion(Object result, Object output) {
         if(result == output) {
-            //
+            System.out.println( " result index = " + result + "output index both same= " + output);
             return;
         }
 
@@ -115,23 +117,11 @@ class BinarySearch{
         assertion (1, obj.binarySearch(new int[] {40,50,60,70,80},0,4, val));
         //assertion (3, obj.binarySearch(new int[] {10,20,30,40,50,60}, 0,5,val));
         assertion (0, obj.binarySearch(new int[] {0,0,0,0,0},0,4, val));
-        
-    
-    public static void main( String[] args){
-
-        int a = 10;
-        boolean flag = true;
-        if(a % 2 == 0) {
-            System.out.print("even");
-            return;
-        }
-        
-        System.out.print("odd");
-        
     }
+
 }
 
-//************************************************ *
+//iterative advance ************************************************ *
 /* class BinarySearch{
     public int binarySearch( int[]a , int k){
         int  l = 0, mid=0 ;
