@@ -62,20 +62,24 @@ import java.io.*;
 class BinarySearch{
     public int binarySearch( int[]a ,int l, int h, int k){
         int mid = 0;
-        
+        int index =0;
         //base condtion for recursive function
-            if( l > h)
-                return -1;
+        if( l > h)
+            return -1;
                 
-            mid = l +( h -l)/2;
+        mid = l +( h -l)/2;
             
-            if( a[mid] < k)
-                return  binarySearch(a, mid+1,h,k);
-            else//a[mid]>k
-                return binarySearch(a,l, mid -1,k);
+        if( a[mid] < k)
+            index= binarySearch(a, mid+1,h,k);
+        else//a[mid]>k
+            index =  binarySearch(a,l, mid,k);
 
-        
-        return mid;
+        if( a[index] == k){
+            return index;
+        }
+        else{
+            return -1;
+        }
 
     }
     public static void assertion(Object result, Object output) {
